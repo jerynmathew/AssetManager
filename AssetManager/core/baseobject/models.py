@@ -17,7 +17,7 @@ class BaseObject(models.Model):
     updated_on = models.DateTimeField(auto_now_add=True, auto_now=True)
 
     # Store all attributes/properties of the object as dictionary
-    attributes = JSONField(load_kwargs={'object_pairs_hook': OrderedDict})
+    attributes = JSONField(load_kwargs={'object_pairs_hook': OrderedDict}, blank=True)
 
     def __init__(self, *args, **kwargs):
         super(BaseObject, self).__init__(*args, **kwargs)
